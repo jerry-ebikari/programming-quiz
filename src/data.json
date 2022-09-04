@@ -1,0 +1,48 @@
+{
+    "questions": [
+        {
+            "question": "Which of these methods prints text in the console?",
+            "options": {
+                "A": "echo",
+                "B": "log",
+                "C": "print",
+                "D": "output"
+            },
+            "correct_option": "D",
+            "question_category": "javascript"
+        },
+        {
+            "question": "Which of these methods adds an item to the end of an array?",
+            "options": {
+                "A": "push",
+                "B": "shift",
+                "C": "unshift",
+                "D": "pop"
+            },
+            "correct_option": "A",
+            "question_category": "javascript"
+        },
+        {
+            "question": "Which of these is not an array iteration method?",
+            "options": {
+                "A": "forEach",
+                "B": "slice",
+                "C": "map",
+                "D": "filter"
+            },
+            "correct_option": "B",
+            "question_category": "javascript"
+        },
+        {
+            "question": "Which of these would delete the property \"gender\" from the \"person\" object",
+            "options": {
+                "A": "person.delete('gender')",
+                "B": "delete person.gender",
+                "C": "remove preson.gender",
+                "D": "person.remove('gender')"
+            },
+            "correct_option": "B",
+            "question_category": "javascript"
+        }
+    ]
+}
