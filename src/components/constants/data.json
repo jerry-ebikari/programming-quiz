@@ -1,17 +1,19 @@
 {
     "questions": [
         {
-            "question": "Which of these methods prints text in the console?",
+            "id": 0,
+            "question": "Which of these methods prints text to the console?",
             "options": {
                 "A": "echo",
                 "B": "log",
                 "C": "print",
                 "D": "output"
             },
-            "correct_option": "D",
+            "correct_option": "B",
             "question_category": "javascript"
         },
         {
+            "id": 1,
             "question": "Which of these methods adds an item to the end of an array?",
             "options": {
                 "A": "push",
@@ -23,6 +25,7 @@
             "question_category": "javascript"
         },
         {
+            "id": 2,
             "question": "Which of these is not an array iteration method?",
             "options": {
                 "A": "forEach",
@@ -34,6 +37,7 @@
             "question_category": "javascript"
         },
         {
+            "id": 3,
             "question": "Which of these would delete the property \"gender\" from the \"person\" object",
             "options": {
                 "A": "person.delete('gender')",
@@ -42,6 +46,42 @@
                 "D": "person.remove('gender')"
             },
             "correct_option": "B",
+            "question_category": "javascript"
+        },
+        {
+            "id": 4,
+            "question": "Which of these does not return an array?",
+            "options": {
+                "A": "arr.forEach",
+                "B": "arr.slice",
+                "C": "arr.map",
+                "D": "arr.filter"
+            },
+            "correct_option": "A",
+            "question_category": "javascript"
+        },
+        {
+            "id": 5,
+            "question": "Which property returns the number of characters in a string?",
+            "options": {
+                "A": "length",
+                "B": "size",
+                "C": "numChar",
+                "D": "charLength"
+            },
+            "correct_option": "A",
+            "question_category": "javascript"
+        },
+        {
+            "id": 6,
+            "question": "What would be outputted to the console?\nlet a = b = 5;\nconsole.log(b);",
+            "options": {
+                "A": "5",
+                "B": "NaN",
+                "C": "undefined",
+                "D": "null"
+            },
+            "correct_option": "A",
             "question_category": "javascript"
         }
     ]

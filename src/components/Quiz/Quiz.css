@@ -1,0 +1,93 @@
+@media (max-width: 768px) {
+    .question-container > .quiz-container > .MuiPaper-root {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+@media (min-width: 768px) {
+    .quiz-container {
+        width: 500px;
+    }
+}
+
+.question-header {
+    padding: 30px 0;
+}
+
+.question-panel {
+    margin-bottom: 20px;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+label.clickable .MuiPaper-root {
+    --padding: 15px;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+}
+
+.quiz-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-panel + .MuiButton-root {
+    width: 100%;
+    height: 48px;
+}
+
+.MuiPaginationItem-root {
+    --size: 40px;
+    padding: 0 !important;
+    height: var(--size) !important;
+    width: var(--size) !important;
+    border-radius: 50% !important;
+}
+.MuiPaginationItem-root:hover {
+    color: #fff;
+}
+
+.MuiPaginationItem-root.Mui-selected {
+    background-color: var(--primary-color) !important;
+}
+
+.radio-btn {
+    display: none;
+}
+
+.radio-div {
+    --size: 20px;
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    outline: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.radio-btn:checked + .radio-div .ball {
+    --size: 70%;
+    height: var(--size);
+    width: var(--size);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin: 0;
+}
+
+.MuiModal-root {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    margin-top: 20px;
+}
