@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
@@ -8,8 +8,22 @@ import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import { navbarItems } from './constants/navbarItems';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { QuestionContext } from '../App';
+
+
+const navItems = navbarItems;
 
 function Navbar({isDrawerOpen, setIsDrawerOpen}) {
+    function goto(src, destination) {
+        if (src == 'quiz' && questionNumber > 0) {
+            handleOpen(destination)
+            return;
+        }
+        changeQuestionNumber(0);
+        navigate(destination);
+        return;
+    }
+    let {questionNumber, changeQuestionNumber, handleOpen} = useContext(QuestionContext)
     const navigate = useNavigate();
     const location = useLocation();
     let path = location.pathname.split('/').slice(-1)[0];
@@ -36,7 +50,7 @@ function Navbar({isDrawerOpen, setIsDrawerOpen}) {
                                 }}
                                 key={item.id}
                                 onClick={() => {
-                                    navigate(item.route);
+                                    goto(path, item.route);
                                     setIsDrawerOpen(false);
                                 }}>
                                 <ListItemIcon >

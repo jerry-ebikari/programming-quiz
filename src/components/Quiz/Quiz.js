@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import './Quiz.css';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import data from '../constants/data.json';
+import { QuestionContext } from '../../App';
 
 function useKey(key, cb) {
   const callbackRef = useRef(cb);
@@ -54,7 +55,8 @@ function Quiz() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {setOpen(false); reset()};
   let questions = data.questions;
-  let [questionNumber, setQuestionNumber] = useState(0);
+  // let [questionNumber, changeQuestionNumber] = useState(0);
+  let {questionNumber, changeQuestionNumber} = useContext(QuestionContext)
   let question = questions[questionNumber];
   let [selectedAnswer, setSelectedAnswer] = useState();
   let [correctAnswerCount, updateCorrectAnswerCount] = useState(0);
@@ -76,7 +78,7 @@ function Quiz() {
           handleOpen();
           return;
         }
-        setQuestionNumber(prevState => prevState + 1);
+        changeQuestionNumber(questionNumber + 1);
         setSelectedAnswer();
         setIsSelectedCorrect(false);
       }
@@ -97,7 +99,7 @@ function Quiz() {
   function reset() {
     setIsSelectedCorrect(false);
     updateCorrectAnswerCount(0);
-    setQuestionNumber(0);
+    changeQuestionNumber(0);
     setSelectedAnswer();
     setSubmitted(false);
   }

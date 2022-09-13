@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import ReactDOM from 'react-dom';
 import './Header.css'
 import AppBar from '@mui/material/AppBar';
@@ -10,9 +10,21 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { navbarItems } from '../constants/navbarItems';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { QuestionContext } from '../../App';
+
+const navItems = navbarItems;
 
 function Header({toggleDrawer, isDrawerOpen}) {
-  const navItems = navbarItems;
+  function goto(src, destination) {
+    if (src == 'quiz' && questionNumber > 0) {
+        handleOpen(destination);
+        return;
+    }
+    changeQuestionNumber(0);
+    navigate(destination);
+    return;
+  }
+  let {questionNumber, changeQuestionNumber, handleOpen} = useContext(QuestionContext)
   const navigate = useNavigate();
   const location = useLocation();
   let path = location.pathname.split('/').slice(-1)[0];
@@ -43,7 +55,7 @@ function Header({toggleDrawer, isDrawerOpen}) {
                   color: path == item.route ? '#fff' : 'var(--white)',
                   backgroundColor: path == item.route ? 'rgba(255, 255, 255, 0.4) !important' : 'transparent'
                 }}
-                onClick={() => navigate(item.route)}>
+                onClick={() => goto(path, item.route)}>
                 <Typography variant='body1'>
                   {item.label}
                 </Typography>
